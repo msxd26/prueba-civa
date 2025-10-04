@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: civaDb
+      POSTGRES_USER: tu_usuario
+      POSTGRES_PASSWORD: tu_password
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+
+
